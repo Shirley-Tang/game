@@ -41,14 +41,20 @@ var GAME = {
   bindEvent: function() {
     var self = this;
     var playBtn = document.querySelector('.js-play');
-    var replayBtn = document.querySelector('.js-replay');
+    var replayBtn1 = document.querySelector('.game-failed .js-replay');
+    var replayBtn2 = document.querySelector('.game-all-success .js-replay');
     var nextBtn = document.querySelector('.js-next');
     // 开始游戏按钮绑定
     playBtn.onclick = function() {
       self.play();
     };
     //重新玩游戏按钮
-    replayBtn.onclick = function() {
+    replayBtn1.onclick = function() {
+      self.opts.level = 1;
+      self.play();
+      self.score = 0;
+    }
+    replayBtn2.onclick = function() {
       self.opts.level = 1;
       self.play();
       self.score = 0;
